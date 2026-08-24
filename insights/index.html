@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights — Merchant AI Group</title>
+<meta name="description" content="Real case studies and practical guides on AI automation, chatbots, and business workflows from Merchant AI Group.">
+<link rel="canonical" href="https://merchantaigroup.com/insights/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+<style>
+:root{
+  --black:#080C14;
+  --navy:#0A1020;
+  --surface:#0D1526;
+  --surface2:#111D33;
+  --blue:#0EA5E9;
+  --blue-light:#38BDF8;
+  --cyan:#06B6D4;
+  --cyan-light:#22D3EE;
+  --blue-dim:rgba(14,165,233,0.12);
+  --blue-border:rgba(14,165,233,0.22);
+  --cyan-dim:rgba(6,182,212,0.1);
+  --white:#FAFAFA;
+  --grey:#7A8FA6;
+  --grey-light:#A8BCCF;
+  --display:"Cormorant Garamond",serif;
+  --tech:"Orbitron",sans-serif;
+  --body:"Inter",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--body);font-weight:300;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:206;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;transition:all .3s;background:linear-gradient(to bottom,rgba(8,12,20,.97),transparent)}
+header.scrolled{background:rgba(8,12,20,.98);border-bottom:1px solid var(--blue-border);padding:10px 48px}
+.header-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-img{height:44px;width:auto;object-fit:contain}
+.logo-text{display:flex;flex-direction:column;line-height:1.1}
+.logo-text-main{font-family:var(--tech);font-size:.75rem;font-weight:700;letter-spacing:.2em;color:var(--white);text-transform:uppercase}
+.logo-text-main span{color:var(--cyan)}
+.logo-text-sub{font-family:var(--tech);font-size:.52rem;font-weight:400;letter-spacing:.35em;color:var(--grey-light);text-transform:uppercase;margin-top:2px}
+nav{display:flex;align-items:center;gap:28px}
+nav a{font-size:.72rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--grey-light);text-decoration:none;transition:color .2s}
+nav a:hover{color:var(--cyan)}
+.btn-nav{background:transparent;border:1px solid var(--blue-border);color:var(--blue)!important;padding:9px 22px;border-radius:2px;transition:all .2s!important;font-size:.72rem!important;letter-spacing:.1em}
+.btn-nav:hover{background:var(--blue)!important;color:var(--black)!important}
+
+/* HAMBURGER (mobile nav toggle) */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:transparent;border:none;cursor:pointer;padding:0;z-index:210}
+.hamburger span{display:block;width:100%;height:2px;background:var(--grey-light);transition:all .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(4,7,13,.6);z-index:204;opacity:0;transition:opacity .3s ease}
+.nav-overlay.open{display:block;opacity:1}
+
+/* LANGUAGE SWITCHER */
+.lang-switcher{position:relative}
+.lang-btn{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--blue-border);color:var(--grey-light);font-family:var(--body);font-size:.72rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;border-radius:2px;cursor:pointer;transition:all .2s}
+.lang-btn:hover{border-color:var(--cyan);color:var(--cyan)}
+.lang-btn svg{width:10px;height:10px;fill:currentColor;transition:transform .2s}
+.lang-switcher.open .lang-btn svg{transform:rotate(180deg)}
+.lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--surface2);border:1px solid var(--blue-border);border-radius:2px;min-width:140px;overflow:hidden;z-index:300}
+.lang-switcher.open .lang-dropdown{display:block}
+.lang-option{display:flex;align-items:center;gap:10px;padding:10px 16px;font-size:.78rem;color:var(--grey-light);cursor:pointer;transition:all .2s;border-bottom:1px solid rgba(14,165,233,.08)}
+.lang-option:last-child{border-bottom:none}
+.lang-option:hover{background:var(--blue-dim);color:var(--cyan)}
+.lang-option.active{color:var(--cyan)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 24px 100px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 50% 0%,rgba(6,182,212,.08) 0%,transparent 55%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(14,165,233,.06) 0%,transparent 50%),radial-gradient(ellipse 40% 40% at 10% 60%,rgba(6,182,212,.04) 0%,transparent 50%),var(--black)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(14,165,233,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(14,165,233,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 90% 90% at 50% 40%,black,transparent)}
+.hero-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(6,182,212,.12) 0%,transparent 70%);pointer-events:none}
+.hero-eyebrow{font-family:var(--tech);font-size:.62rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--cyan);margin-bottom:28px;position:relative;display:inline-flex;align-items:center;gap:14px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:"";width:32px;height:1px;background:linear-gradient(to right,transparent,var(--cyan));opacity:.7}
+.hero-eyebrow::after{background:linear-gradient(to left,transparent,var(--cyan))}
+.hero h1{font-family:var(--display);font-size:clamp(2.8rem,7vw,6.5rem);font-weight:300;line-height:1.06;letter-spacing:-.02em;max-width:940px;position:relative;margin-bottom:24px}
+.hero h1 em{font-style:italic;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(.95rem,1.8vw,1.1rem);font-weight:300;color:var(--grey-light);max-width:580px;line-height:1.8;position:relative;margin-bottom:12px}
+.hero-sub2{font-size:.82rem;color:var(--grey);max-width:480px;margin:0 auto 48px;position:relative;line-height:1.7}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;position:relative;margin-bottom:64px}
+
+/* BUTTONS */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:var(--black);font-family:var(--tech);font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:15px 34px;border-radius:2px;transition:all .25s;border:none;cursor:pointer}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(14,165,233,.35)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-family:var(--tech);font-size:.68rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:15px 34px;border-radius:2px;border:1px solid var(--blue-border);transition:all .25s;cursor:pointer}
+.btn-secondary:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px);box-shadow:0 0 20px rgba(6,182,212,.15)}
+
+/* TRUST STRIP */
+.trust-strip{background:var(--surface);border-top:1px solid var(--blue-border);border-bottom:1px solid var(--blue-border);padding:22px 48px;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.trust-badge{display:flex;align-items:center;gap:10px;font-size:.75rem;color:var(--grey-light);font-family:var(--tech);letter-spacing:.08em}
+.trust-icon{width:28px;height:28px;border:1px solid var(--blue-border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:.75rem;flex-shrink:0}
+
+/* STATS */
+.stats-row{display:flex;gap:0;background:var(--blue-border)}
+.stat-item{flex:1;background:var(--navy);padding:36px 24px;text-align:center;position:relative;overflow:hidden}
+.stat-item::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--cyan),transparent);opacity:0;transition:opacity .3s}
+.stat-item:hover::before{opacity:1}
+.stat-num{font-family:var(--tech);font-size:2.4rem;font-weight:700;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:8px}
+.stat-label{font-size:.65rem;color:var(--grey);letter-spacing:.15em;text-transform:uppercase;font-family:var(--tech)}
+
+/* SECTIONS */
+.section{padding:110px 48px;max-width:1200px;margin:0 auto}
+.section-bg{padding:110px 0}
+.section-inner{max-width:1200px;margin:0 auto;padding:0 48px}
+.eyebrow{font-family:var(--tech);font-size:.62rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px}
+h2{font-family:var(--display);font-size:clamp(2.2rem,4.5vw,4rem);font-weight:300;line-height:1.1;letter-spacing:-.01em;margin-bottom:20px}
+h2 em{font-style:italic;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.lead{font-size:1rem;color:var(--grey-light);max-width:580px;line-height:1.85;margin-bottom:44px}
+.blue-rule{width:48px;height:2px;background:linear-gradient(to right,var(--blue),var(--cyan));margin-bottom:36px;border-radius:1px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--blue-border);background:var(--navy);padding:64px 48px 36px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;text-decoration:none}
+.footer-logo{height:48px;width:auto}
+.footer-logo-text{display:flex;flex-direction:column;line-height:1.1}
+.footer-logo-text-main{font-family:var(--tech);font-size:.65rem;font-weight:700;letter-spacing:.2em;color:var(--white);text-transform:uppercase}
+.footer-logo-text-main span{color:var(--cyan)}
+.footer-logo-text-sub{font-family:var(--tech);font-size:.45rem;font-weight:400;letter-spacing:.3em;color:var(--grey);text-transform:uppercase;margin-top:2px}
+.footer-brand p{font-size:.8rem;color:var(--grey);line-height:1.85;max-width:260px}
+.footer-col h4{font-family:var(--tech);font-size:.6rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:9px}
+.footer-col ul li a{font-size:.82rem;color:var(--grey);text-decoration:none;transition:color .2s}
+.footer-col ul li a:hover{color:var(--cyan)}
+.footer-contact-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;font-size:.8rem;color:var(--grey)}
+.footer-contact-row a{color:var(--grey);text-decoration:none;transition:color .2s}
+.footer-contact-row a:hover{color:var(--cyan)}
+.footer-bottom{padding-top:28px;border-top:1px solid rgba(14,165,233,.08);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.7rem;color:var(--grey);opacity:.5;font-family:var(--tech);letter-spacing:.06em}
+
+/* FADE */
+.fi{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.fi.vis{opacity:1;transform:translateY(0)}
+
+/* MOBILE */
+@media(max-width:900px){
+  header{padding:12px 20px}
+  .hamburger{display:flex}
+  nav{position:fixed;top:0;right:-100%;width:78%;max-width:320px;height:100vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:0;background:var(--navy);border-left:1px solid var(--blue-border);padding:90px 28px 28px;transition:right .3s ease;overflow-y:auto;z-index:205}
+  nav.open{right:0}
+  nav a{width:100%;padding:16px 0;border-bottom:1px solid var(--blue-border);font-size:.85rem}
+  .lang-switcher{width:100%;margin:16px 0}
+  .lang-btn{width:100%;justify-content:space-between}
+  .lang-dropdown{position:static;width:100%;margin-top:8px;border:1px solid var(--blue-border)}
+  .btn-nav{width:100%;text-align:center;margin-top:16px}
+  .section{padding:72px 20px}
+  .section-inner{padding:0 20px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+}
+</style>
+<style>
+.insights-wrap{max-width:900px;margin:0 auto;padding:160px 24px 100px}
+.insights-eyebrow{font-family:var(--tech);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px}
+.insights-title{font-family:var(--display);font-size:2.8rem;font-weight:400;margin-bottom:48px}
+.insight-card{display:block;padding:28px 0;border-bottom:1px solid var(--blue-border);text-decoration:none;transition:opacity .2s}
+.insight-card:hover{opacity:.75}
+.insight-card-label{font-family:var(--tech);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin-bottom:10px}
+.insight-card-title{font-family:var(--display);font-size:1.5rem;color:var(--white);font-weight:400;margin-bottom:10px}
+.insight-card-summary{color:var(--grey-light);font-size:.95rem;line-height:1.6}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="/" class="header-brand">
+    <img src="/site-logo.png" alt="Merchant AI Group" class="logo-img" width="44" height="44">
+    <div class="logo-text">
+      <span class="logo-text-main">Merchant <span>AI</span></span>
+      <span class="logo-text-sub">Group</span>
+    </div>
+  </a>
+  <nav>
+    <a href="/#services" data-i18n="nav_services">Services</a>
+    <a href="/#integrations" data-i18n="nav_integrations">Integrations</a>
+    <a href="/#why" data-i18n="nav_why">Why Us</a>
+    <a href="/#process" data-i18n="nav_process">Process</a>
+    <a href="/#testimonials" data-i18n="nav_testimonials">Testimonials</a>
+    <a href="/insights/">Insights</a>
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-btn" onclick="toggleLang()">
+        <span id="currentFlag">🇬🇧</span>
+        <span id="currentLang">EN</span>
+        <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
+      </button>
+      <div class="lang-dropdown">
+        <div class="lang-option active" onclick="setLang('en')"><span>🇬🇧</span> English</div>
+        <div class="lang-option" onclick="setLang('es')"><span>🇪🇸</span> Español</div>
+        <div class="lang-option" onclick="setLang('fr')"><span>🇫🇷</span> Français</div>
+        <div class="lang-option" onclick="setLang('de')"><span>🇩🇪</span> Deutsch</div>
+        <div class="lang-option" onclick="setLang('nl')"><span>🇳🇱</span> Nederlands</div>
+      </div>
+    </div>
+  </nav>
+  <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<div class="insights-wrap">
+  <p class="insights-eyebrow">Insights</p>
+  <h1 class="insights-title">Real builds. Real results.</h1>
+
+  <a href="/insights/secure-future-ai-receptionist-case-study.html" class="insight-card">
+    <div class="insight-card-label">Case Study</div>
+    <div class="insight-card-title">Building an AI Receptionist That Qualifies Leads and Books Calls for Secure Future</div>
+    <div class="insight-card-summary">How we built a system that qualifies leads, books appointments, sends reminders, and updates the CRM automatically — end to end, no manual follow-up required.</div>
+  </a>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-brand-row">
+          <img src="/site-logo.png" alt="Merchant AI Group" class="footer-logo" width="48" height="48">
+          <div class="footer-logo-text">
+            <span class="footer-logo-text-main">Merchant <span>AI</span></span>
+            <span class="footer-logo-text-sub">Group</span>
+          </div>
+        </a>
+        <p>Global AI automation built around your business. We respond, qualify, book and follow up — so your team can focus on growth.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#integrations">Integrations</a></li>
+          <li><a href="/#why">Why Us</a></li>
+          <li><a href="/#process">Process</a></li>
+          <li><a href="/#testimonials">Testimonials</a></li>
+          <li><a href="/insights/">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-row">📧 <a href="mailto:bobby@merchantaigroup.com">bobby@merchantaigroup.com</a></div>
+        <div class="footer-contact-row">📞 <a href="tel:+34661167161">+34 661 167 161</a></div>
+        <div class="footer-contact-row">💬 <a href="https://wa.me/34661167161" target="_blank">WhatsApp +34 661 167 161</a></div>
+        <div class="footer-contact-row">🌐 <a href="https://merchantaigroup.com">merchantaigroup.com</a></div>
+        <div class="footer-contact-row">📍 Jerez de la Frontera, Spain</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Merchant AI Group. All rights reserved. Global AI Automation Services.</p>
+      <p>Built for operators · Delivered worldwide</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleLang(){document.getElementById('langSwitcher').classList.toggle('open');}
+function toggleMobileNav(){
+  document.querySelector('nav').classList.toggle('open');
+  document.getElementById('hamburgerBtn').classList.toggle('open');
+  document.getElementById('navOverlay').classList.toggle('open');
+}
+document.querySelectorAll('nav > a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.querySelector('nav').classList.remove('open');
+    document.getElementById('hamburgerBtn').classList.remove('open');
+    document.getElementById('navOverlay').classList.remove('open');
+  });
+});
+document.addEventListener('click',function(e){if(!e.target.closest('#langSwitcher'))document.getElementById('langSwitcher').classList.remove('open');});
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40));
+</script>
+
+<script src="/chat-widget.js"
+        data-api-url="https://merchant-ai-receptionist.onrender.com/api/chat"
+        data-lang="auto"
+        data-auto-open="false"
+        data-logo-url="/logo.png"></script>
+
+</body>
+</html>
