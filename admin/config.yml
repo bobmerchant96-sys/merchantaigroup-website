@@ -1,0 +1,28 @@
+# Use DecapBridge PKCE auth (required)
+backend:
+  name: git-gateway
+  repo: bobmerchant96-sys/merchantaigroup-website
+  branch: main
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/e7641488-9bd3-4b6d-a67b-18ca5762b6f2/pkce
+  auth_token_endpoint: /sites/e7641488-9bd3-4b6d-a67b-18ca5762b6f2/token
+  gateway_url: https://gateway.decapbridge.com
+
+media_folder: "insights/images"
+public_folder: "/insights/images"
+
+collections:
+  - name: "insights"
+    label: "Insights / Blog Posts"
+    folder: "insights/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "yaml-frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
