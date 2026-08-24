@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +23,6 @@
   --cyan-light:#22D3EE;
   --blue-dim:rgba(14,165,233,0.12);
   --blue-border:rgba(14,165,233,0.22);
-  --cyan-dim:rgba(6,182,212,0.1);
   --white:#FAFAFA;
   --grey:#7A8FA6;
   --grey-light:#A8BCCF;
@@ -36,7 +34,6 @@
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:var(--body);font-weight:300;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* HEADER */
 header{position:fixed;top:0;left:0;right:0;z-index:206;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;transition:all .3s;background:linear-gradient(to bottom,rgba(8,12,20,.97),transparent)}
 header.scrolled{background:rgba(8,12,20,.98);border-bottom:1px solid var(--blue-border);padding:10px 48px}
 .header-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -48,10 +45,7 @@ header.scrolled{background:rgba(8,12,20,.98);border-bottom:1px solid var(--blue-
 nav{display:flex;align-items:center;gap:28px}
 nav a{font-size:.72rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--grey-light);text-decoration:none;transition:color .2s}
 nav a:hover{color:var(--cyan)}
-.btn-nav{background:transparent;border:1px solid var(--blue-border);color:var(--blue)!important;padding:9px 22px;border-radius:2px;transition:all .2s!important;font-size:.72rem!important;letter-spacing:.1em}
-.btn-nav:hover{background:var(--blue)!important;color:var(--black)!important}
 
-/* HAMBURGER (mobile nav toggle) */
 .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:transparent;border:none;cursor:pointer;padding:0;z-index:210}
 .hamburger span{display:block;width:100%;height:2px;background:var(--grey-light);transition:all .25s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -60,7 +54,6 @@ nav a:hover{color:var(--cyan)}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(4,7,13,.6);z-index:204;opacity:0;transition:opacity .3s ease}
 .nav-overlay.open{display:block;opacity:1}
 
-/* LANGUAGE SWITCHER */
 .lang-switcher{position:relative}
 .lang-btn{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--blue-border);color:var(--grey-light);font-family:var(--body);font-size:.72rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;border-radius:2px;cursor:pointer;transition:all .2s}
 .lang-btn:hover{border-color:var(--cyan);color:var(--cyan)}
@@ -73,142 +66,9 @@ nav a:hover{color:var(--cyan)}
 .lang-option:hover{background:var(--blue-dim);color:var(--cyan)}
 .lang-option.active{color:var(--cyan)}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 24px 100px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 50% 0%,rgba(6,182,212,.08) 0%,transparent 55%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(14,165,233,.06) 0%,transparent 50%),radial-gradient(ellipse 40% 40% at 10% 60%,rgba(6,182,212,.04) 0%,transparent 50%),var(--black)}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(14,165,233,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(14,165,233,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 90% 90% at 50% 40%,black,transparent)}
-.hero-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(6,182,212,.12) 0%,transparent 70%);pointer-events:none}
-.hero-eyebrow{font-family:var(--tech);font-size:.62rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--cyan);margin-bottom:28px;position:relative;display:inline-flex;align-items:center;gap:14px}
-.hero-eyebrow::before,.hero-eyebrow::after{content:"";width:32px;height:1px;background:linear-gradient(to right,transparent,var(--cyan));opacity:.7}
-.hero-eyebrow::after{background:linear-gradient(to left,transparent,var(--cyan))}
-.hero h1{font-family:var(--display);font-size:clamp(2.8rem,7vw,6.5rem);font-weight:300;line-height:1.06;letter-spacing:-.02em;max-width:940px;position:relative;margin-bottom:24px}
-.hero h1 em{font-style:italic;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:clamp(.95rem,1.8vw,1.1rem);font-weight:300;color:var(--grey-light);max-width:580px;line-height:1.8;position:relative;margin-bottom:12px}
-.hero-sub2{font-size:.82rem;color:var(--grey);max-width:480px;margin:0 auto 48px;position:relative;line-height:1.7}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;position:relative;margin-bottom:64px}
-
-/* BUTTONS */
 .btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:var(--black);font-family:var(--tech);font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:15px 34px;border-radius:2px;transition:all .25s;border:none;cursor:pointer}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(14,165,233,.35)}
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-family:var(--tech);font-size:.68rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:15px 34px;border-radius:2px;border:1px solid var(--blue-border);transition:all .25s;cursor:pointer}
-.btn-secondary:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px);box-shadow:0 0 20px rgba(6,182,212,.15)}
 
-/* TRUST STRIP */
-.trust-strip{background:var(--surface);border-top:1px solid var(--blue-border);border-bottom:1px solid var(--blue-border);padding:22px 48px;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
-.trust-badge{display:flex;align-items:center;gap:10px;font-size:.75rem;color:var(--grey-light);font-family:var(--tech);letter-spacing:.08em}
-.trust-icon{width:28px;height:28px;border:1px solid var(--blue-border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:.75rem;flex-shrink:0}
-
-/* STATS */
-.stats-row{display:flex;gap:0;background:var(--blue-border)}
-.stat-item{flex:1;background:var(--navy);padding:36px 24px;text-align:center;position:relative;overflow:hidden}
-.stat-item::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--cyan),transparent);opacity:0;transition:opacity .3s}
-.stat-item:hover::before{opacity:1}
-.stat-num{font-family:var(--tech);font-size:2.4rem;font-weight:700;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:8px}
-.stat-label{font-size:.65rem;color:var(--grey);letter-spacing:.15em;text-transform:uppercase;font-family:var(--tech)}
-
-/* SECTIONS */
-.section{padding:110px 48px;max-width:1200px;margin:0 auto}
-.section-bg{padding:110px 0}
-.section-inner{max-width:1200px;margin:0 auto;padding:0 48px}
-.eyebrow{font-family:var(--tech);font-size:.62rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px}
-h2{font-family:var(--display);font-size:clamp(2.2rem,4.5vw,4rem);font-weight:300;line-height:1.1;letter-spacing:-.01em;margin-bottom:20px}
-h2 em{font-style:italic;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.lead{font-size:1rem;color:var(--grey-light);max-width:580px;line-height:1.85;margin-bottom:44px}
-.blue-rule{width:48px;height:2px;background:linear-gradient(to right,var(--blue),var(--cyan));margin-bottom:36px;border-radius:1px}
-
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.about-visual{position:relative;height:520px;border:1px solid var(--blue-border);background:var(--surface);overflow:hidden}
-.about-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,165,233,.05),rgba(6,182,212,.05));pointer-events:none}
-.about-mono{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--tech);font-size:7rem;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.08;letter-spacing:.1em}
-.about-corner{position:absolute;width:20px;height:20px;border-color:var(--cyan);border-style:solid;opacity:.5}
-.about-corner.tl{top:16px;left:16px;border-width:2px 0 0 2px}
-.about-corner.tr{top:16px;right:16px;border-width:2px 2px 0 0}
-.about-corner.bl{bottom:16px;left:16px;border-width:0 0 2px 2px}
-.about-corner.br{bottom:16px;right:16px;border-width:0 2px 2px 0}
-.about-badge{position:absolute;bottom:28px;left:28px;background:rgba(8,12,20,.92);border:1px solid var(--blue-border);padding:18px 22px;backdrop-filter:blur(8px)}
-.about-badge-num{font-family:var(--tech);font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:4px}
-.about-badge-lbl{font-size:.62rem;color:var(--grey);letter-spacing:.12em;text-transform:uppercase;font-family:var(--tech)}
-.about-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
-.about-stat-item{padding:18px;border:1px solid var(--blue-border);background:var(--surface);position:relative;overflow:hidden}
-.about-stat-item::after{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,var(--blue),var(--cyan));opacity:.4}
-.about-stat-num{font-family:var(--tech);font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px}
-.about-stat-lbl{font-size:.62rem;color:var(--grey);letter-spacing:.1em;text-transform:uppercase;font-family:var(--tech)}
-.about-content p{color:var(--grey-light);margin-bottom:18px;font-size:.92rem;line-height:1.9}
-
-/* SERVICES */
-.svc-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;flex-wrap:wrap;gap:24px}
-.svc-count{font-family:var(--tech);font-size:3rem;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.2;line-height:1}
-.svc-groups{display:flex;flex-direction:column;gap:2px;background:var(--blue-border)}
-.svc-group{background:var(--surface);overflow:hidden}
-.svc-group-header{display:flex;align-items:center;justify-content:space-between;padding:26px 36px;cursor:pointer;transition:background .2s;user-select:none}
-.svc-group-header:hover{background:var(--surface2)}
-.svc-group-label{display:flex;align-items:center;gap:16px}
-.svc-group-num{font-family:var(--tech);font-size:.6rem;color:var(--cyan);letter-spacing:.18em;opacity:.7}
-.svc-group-title{font-family:var(--display);font-size:1.4rem;font-weight:400}
-.svc-group-count{font-size:.7rem;color:var(--grey);letter-spacing:.1em;font-family:var(--tech)}
-.svc-toggle{color:var(--cyan);font-size:1.2rem;transition:transform .3s}
-.svc-group.open .svc-toggle{transform:rotate(45deg)}
-.svc-items{display:none;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--blue-border)}
-.svc-group.open .svc-items{display:grid}
-.svc-item{background:var(--black);padding:28px 30px;transition:background .2s;position:relative;overflow:hidden}
-.svc-item::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--cyan),transparent);opacity:0;transition:opacity .3s}
-.svc-item:hover{background:var(--surface)}
-.svc-item:hover::before{opacity:1}
-.svc-item h4{font-family:var(--display);font-size:1.1rem;font-weight:400;margin-bottom:8px}
-.svc-item p{font-size:.8rem;color:var(--grey);line-height:1.7}
-
-/* INTEGRATIONS */
-.integrations-track{overflow:hidden;padding:20px 0;position:relative}
-.integrations-track::before,.integrations-track::after{content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2}
-.integrations-track::before{left:0;background:linear-gradient(to right,var(--black),transparent)}
-.integrations-track::after{right:0;background:linear-gradient(to left,var(--black),transparent)}
-.integrations-inner{display:flex;width:max-content;animation:scrollLeft 32s linear infinite}
-@keyframes scrollLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.int-pill{display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border:1px solid var(--blue-border);background:var(--surface);font-size:.75rem;color:var(--grey-light);letter-spacing:.06em;white-space:nowrap;margin-right:12px;flex-shrink:0;font-family:var(--tech);transition:all .2s}
-.int-pill:hover{border-color:var(--cyan);color:var(--cyan)}
-
-/* WHY */
-.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--blue-border);border:1px solid var(--blue-border);margin-top:52px}
-.why-item{background:var(--black);padding:44px 40px;transition:background .3s;position:relative;overflow:hidden}
-.why-item::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--blue),var(--cyan));opacity:0;transition:opacity .3s}
-.why-item:hover{background:var(--surface)}
-.why-item:hover::before{opacity:1}
-.why-num{font-family:var(--tech);font-size:.65rem;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.2em;margin-bottom:16px}
-.why-item h3{font-family:var(--display);font-size:1.35rem;font-weight:400;margin-bottom:10px}
-.why-item p{font-size:.84rem;color:var(--grey);line-height:1.8}
-
-/* PROCESS */
-.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:52px;position:relative}
-.process-steps::before{content:"";position:absolute;top:27px;left:calc(16.66% + 27px);right:calc(16.66% + 27px);height:1px;background:linear-gradient(to right,var(--blue),var(--cyan),var(--blue));opacity:.3}
-.process-step{text-align:center;padding:0 36px}
-.step-circle{width:54px;height:54px;border:1px solid var(--blue-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--tech);font-size:1.1rem;font-weight:700;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 auto 24px;background-color:var(--black);position:relative;z-index:1;box-shadow:0 0 20px rgba(14,165,233,.15)}
-.process-step h3{font-family:var(--display);font-size:1.35rem;font-weight:400;margin-bottom:10px}
-.process-step p{font-size:.83rem;color:var(--grey);line-height:1.75}
-
-/* TESTIMONIALS */
-.testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:52px}
-.tcard{background:var(--surface);border:1px solid var(--blue-border);padding:36px 32px;border-radius:2px;transition:all .3s;position:relative;overflow:hidden}
-.tcard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--blue),var(--cyan));opacity:0;transition:opacity .3s}
-.tcard:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 12px 40px rgba(14,165,233,.1)}
-.tcard:hover::before{opacity:1}
-.tcard-stars{color:var(--cyan);font-size:.72rem;letter-spacing:3px;margin-bottom:12px}
-.tcard-q{font-family:var(--tech);font-size:2rem;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.3;line-height:1;margin-bottom:10px}
-.tcard-text{font-size:.88rem;color:var(--grey-light);line-height:1.85;margin-bottom:24px;font-style:italic}
-.tcard-author{display:flex;align-items:center;gap:12px}
-.tcard-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue-dim);border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;font-family:var(--tech);font-size:.85rem;font-weight:700;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;flex-shrink:0}
-.tcard-name{font-size:.8rem;font-weight:500;color:var(--white);font-family:var(--tech);letter-spacing:.05em}
-.tcard-role{font-size:.72rem;color:var(--grey)}
-
-/* FINAL CTA */
-.final-cta{text-align:center;padding:160px 48px;position:relative;overflow:hidden}
-.final-cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 75% 65% at 50% 50%,rgba(6,182,212,.07) 0%,transparent 70%),var(--black)}
-.final-cta-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(14,165,233,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(14,165,233,.03) 1px,transparent 1px);background-size:60px 60px}
-.final-cta h2{max-width:720px;margin:0 auto 18px;position:relative}
-.final-cta p{font-size:.95rem;color:var(--grey-light);max-width:460px;margin:0 auto 44px;position:relative}
-.final-cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
-
-/* FOOTER */
 footer{border-top:1px solid var(--blue-border);background:var(--navy);padding:64px 48px 36px}
 .footer-inner{max-width:1200px;margin:0 auto}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px}
@@ -230,16 +90,6 @@ footer{border-top:1px solid var(--blue-border);background:var(--navy);padding:64
 .footer-bottom{padding-top:28px;border-top:1px solid rgba(14,165,233,.08);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .footer-bottom p{font-size:.7rem;color:var(--grey);opacity:.5;font-family:var(--tech);letter-spacing:.06em}
 
-
-
-/* SCAN LINE EFFECT */
-@keyframes scanLine{0%{top:-100%}100%{top:200%}}
-
-/* FADE */
-.fi{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
-.fi.vis{opacity:1;transform:translateY(0)}
-
-/* MOBILE */
 @media(max-width:900px){
   header{padding:12px 20px}
   .hamburger{display:flex}
@@ -249,25 +99,10 @@ footer{border-top:1px solid var(--blue-border);background:var(--navy);padding:64
   .lang-switcher{width:100%;margin:16px 0}
   .lang-btn{width:100%;justify-content:space-between}
   .lang-dropdown{position:static;width:100%;margin-top:8px;border:1px solid var(--blue-border)}
-  .btn-nav{width:100%;text-align:center;margin-top:16px}
-  .section{padding:72px 20px}
-  .section-inner{padding:0 20px}
-  .about-grid{grid-template-columns:1fr;gap:36px}
-  .about-visual{height:280px}
-  .svc-items{grid-template-columns:1fr!important}
-  .process-steps{grid-template-columns:1fr;gap:36px}
-  .process-steps::before{display:none}
-  .why-grid{grid-template-columns:1fr}
-  .testimonials-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr;gap:32px}
-  .stats-row{flex-direction:column}
-  .trust-strip{padding:20px;gap:20px}
-  .final-cta{padding:100px 20px}
-  footer{padding:48px 20px 28px}
 }
 </style>
 <style>
-/* ARTICLE-SPECIFIC STYLES */
 .article-wrap{max-width:760px;margin:0 auto;padding:160px 24px 100px}
 .article-eyebrow{font-family:var(--tech);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px}
 .article-title{font-family:var(--display);font-size:2.6rem;line-height:1.2;font-weight:400;margin-bottom:20px}
@@ -295,11 +130,11 @@ footer{border-top:1px solid var(--blue-border);background:var(--navy);padding:64
     </div>
   </a>
   <nav>
-    <a href="/#services" data-i18n="nav_services">Services</a>
-    <a href="/#integrations" data-i18n="nav_integrations">Integrations</a>
-    <a href="/#why" data-i18n="nav_why">Why Us</a>
-    <a href="/#process" data-i18n="nav_process">Process</a>
-    <a href="/#testimonials" data-i18n="nav_testimonials">Testimonials</a>
+    <a href="/#services">Services</a>
+    <a href="/#integrations">Integrations</a>
+    <a href="/#why">Why Us</a>
+    <a href="/#process">Process</a>
+    <a href="/#testimonials">Testimonials</a>
     <a href="/insights/">Insights</a>
     <div class="lang-switcher" id="langSwitcher">
       <button class="lang-btn" onclick="toggleLang()">
@@ -308,11 +143,7 @@ footer{border-top:1px solid var(--blue-border);background:var(--navy);padding:64
         <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
       </button>
       <div class="lang-dropdown">
-        <div class="lang-option active" onclick="setLang('en')"><span>🇬🇧</span> English</div>
-        <div class="lang-option" onclick="setLang('es')"><span>🇪🇸</span> Español</div>
-        <div class="lang-option" onclick="setLang('fr')"><span>🇫🇷</span> Français</div>
-        <div class="lang-option" onclick="setLang('de')"><span>🇩🇪</span> Deutsch</div>
-        <div class="lang-option" onclick="setLang('nl')"><span>🇳🇱</span> Nederlands</div>
+        <div class="lang-option active"><span>🇬🇧</span> English</div>
       </div>
     </div>
   </nav>
@@ -350,7 +181,7 @@ footer{border-top:1px solid var(--blue-border);background:var(--navy);padding:64
 
     <div class="article-cta">
       <p>Want a system like this built for your business?</p>
-      <a href="/#" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:var(--black);font-family:var(--tech);font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:15px 34px;border-radius:2px">Get In Touch</a>
+      <a href="/#" class="btn-primary">Get In Touch</a>
     </div>
   </div>
 </div>
@@ -366,21 +197,21 @@ footer{border-top:1px solid var(--blue-border);background:var(--navy);padding:64
             <span class="footer-logo-text-sub">Group</span>
           </div>
         </a>
-        <p data-i18n="footer_brand">Global AI automation built around your business. We respond, qualify, book and follow up — so your team can focus on growth.</p>
+        <p>Global AI automation built around your business. We respond, qualify, book and follow up — so your team can focus on growth.</p>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer_navigate">Navigate</h4>
+        <h4>Navigate</h4>
         <ul>
-          <li><a href="/#services" data-i18n="nav_services">Services</a></li>
-          <li><a href="/#integrations" data-i18n="nav_integrations">Integrations</a></li>
-          <li><a href="/#why" data-i18n="nav_why">Why Us</a></li>
-          <li><a href="/#process" data-i18n="nav_process">Process</a></li>
-          <li><a href="/#testimonials" data-i18n="nav_testimonials">Testimonials</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#integrations">Integrations</a></li>
+          <li><a href="/#why">Why Us</a></li>
+          <li><a href="/#process">Process</a></li>
+          <li><a href="/#testimonials">Testimonials</a></li>
           <li><a href="/insights/">Insights</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer_contact">Contact</h4>
+        <h4>Contact</h4>
         <div class="footer-contact-row">📧 <a href="mailto:bobby@merchantaigroup.com">bobby@merchantaigroup.com</a></div>
         <div class="footer-contact-row">📞 <a href="tel:+34661167161">+34 661 167 161</a></div>
         <div class="footer-contact-row">💬 <a href="https://wa.me/34661167161" target="_blank">WhatsApp +34 661 167 161</a></div>
@@ -390,31 +221,13 @@ footer{border-top:1px solid var(--blue-border);background:var(--navy);padding:64
     </div>
     <div class="footer-bottom">
       <p>© 2026 Merchant AI Group. All rights reserved. Global AI Automation Services.</p>
-      <p data-i18n="footer_tagline">Built for operators · Delivered worldwide</p>
+      <p>Built for operators · Delivered worldwide</p>
     </div>
   </div>
 </footer>
 
 <script>
-const T={en:{nav_services:"Services",nav_integrations:"Integrations",nav_why:"Why Us",nav_process:"Process",nav_testimonials:"Testimonials",nav_book:"Book a Call",hero_eyebrow:"Global AI Automation Consultancy",hero_h1a:"We build AI systems",hero_h1b:"that ",hero_h1c:"run your business",hero_h1d:"24 hours a day.",hero_sub:"Eliminate repetitive work, save thousands in operational costs and never waste another hour on tasks a machine can do better.",hero_sub2:"From first call to live system in ",hero_days:"7–10 days.",cta_book:"Book a Free Call",cta_services:"See Our Services",cta_whatsapp:"💬 WhatsApp Us Now",trust_gdpr:"GDPR & HIPAA Ready",trust_global:"Global Delivery, 24/7",trust_response:"60 Second Response",stat_automations:"Automations Built",stat_response:"Lead Response Time",stat_satisfaction:"Client Satisfaction",stat_always:"Always On",stat_days:"Days to Go Live",about_eyebrow:"About — 01",about_h2a:"More Than Automation —",about_h2b:"A Global Competitive Advantage",about_p1:"Merchant AI Group builds bespoke AI systems for businesses across every industry and every country. We don't sell software — we build custom automation solutions that transform how your business operates.",about_p2:"Every system is designed around your specific workflow, your tools and your goals. From a single chatbot to a full business automation overhaul — we deliver results that pay for themselves.",about_roi:"Average ROI in 90 days",about_industries:"Industries Served",about_countries:"Countries Delivered In",about_uptime:"System Uptime",about_live:"From Call to Live",svc_eyebrow:"Services — 25 Capabilities",svc_h2a:"Every system your business",svc_h2b:"needs to automate, save time",svc_h2c:"and thousands.",svc_lead:"Six service families. Twenty-five capabilities. One system custom built around your workflow, your tools and your goals.",g1_title:"AI Intelligence",g2_title:"Sales & Lead Generation",g3_title:"Operations",g4_title:"Marketing & E-commerce",g5_title:"Industry Specific",g6_title:"Global & Compliance",s1_1:"AI Agent Systems",s1_1d:"Fully autonomous AI agents that run entire business departments — making decisions, taking actions, and delivering results without a human in the loop.",s1_2:"AI Voice Agents",s1_2d:"24/7 inbound and outbound calling in any language with human-grade conversations.",s1_3:"AI Chatbots & Conversational Agents",s1_3d:"WhatsApp, Instagram, Facebook, Telegram and SMS — one brain, every channel.",s2_1:"Lead Generation & Response",s2_1d:"Instant response across every channel so a lead is never lost again.",s2_2:"CRM & Sales Pipeline Automation",s2_2d:"Full pipeline management without human input — from first touch to closed deal.",s2_3:"Email & Follow Up Automation",s2_3d:"Cold outreach, nurture sequences and re-engagement that compound revenue.",s3_1:"Appointment & Booking Automation",s3_1d:"24/7 booking, reminders and rescheduling with zero admin friction.",s3_2:"Systems Integration",s3_2d:"Connect Make, Zapier, n8n and any platform into one seamless stack.",s3_3:"Internal Business Automation",s3_3d:"Invoices, HR, reports and approvals — the back office, on autopilot.",s3_4:"Reporting & Analytics Automation",s3_4d:"Real time dashboards and performance reports delivered automatically.",s4_1:"Social Media Automation",s4_1d:"DMs, comments and scheduling across every platform — consistent, instant, on-brand.",s4_2:"E-commerce Automation",s4_2d:"Abandoned cart recovery, upsells, reviews and loyalty flows that scale revenue.",s4_3:"Marketing & Advertising Automation",s4_3d:"Campaigns, retargeting and lead magnets engineered for conversion.",s5_1:"Healthcare Automation",s5_1d:"Patient booking, reminders and follow up — clinical workflows simplified.",s5_2:"Real Estate Automation",s5_2d:"Property enquiries, viewings and lead qualification handled instantly.",s5_3:"Legal Services Automation",s5_3d:"Client intake, document collection and compliance — without bottlenecks.",s5_4:"Hospitality Automation",s5_4d:"Guest enquiries, reservations and review collection in any language.",s5_5:"Financial Services Automation",s5_5d:"Client onboarding, compliance and reporting built to regulatory standards.",s5_6:"Education & Coaching Automation",s5_6d:"Enrolment, payment and progress tracking that students and parents love.",s5_7:"Home Services Automation",s5_7d:"Quotes, scheduling and invoicing — from first call to paid invoice.",s5_8:"Automotive Automation",s5_8d:"Test drives, follow up and service reminders that drive repeat revenue.",s6_1:"Multilingual & Global Automation",s6_1d:"Any language, any timezone, any country — your business, fluent everywhere.",s6_2:"Compliance & Security Automation",s6_2d:"GDPR, HIPAA and regulatory automation engineered for global standards.",s6_3:"Reputation & Review Automation",s6_3d:"Google reviews, testimonials and referrals collected automatically.",s6_4:"Partnership & Referral Automation",s6_4d:"Affiliate tracking and partner management with full visibility.",int_eyebrow:"Integrations",int_h2a:"We integrate with the tools",int_h2b:"you already use.",int_lead:"From CRMs to messaging, payments to scheduling — your stack stays. We make it talk to itself. Plus any custom API — if it has an endpoint, we connect it.",why_eyebrow:"Why Merchant AI Group",why_h2a:"Built for serious operators —",why_h2b:"not software buyers.",why1_h:"60 Second Response",why1_p:"Every lead gets a reply in under 60 seconds, automatically — any hour, any channel.",why2_h:"Bespoke Systems",why2_p:"Every automation custom built for your specific business, tools and goals. No templates. No shortcuts.",why3_h:"Total Transparency",why3_p:"Clear pricing. Clear timelines. Zero hidden costs. Ever.",why4_h:"Global Reach",why4_p:"Serving businesses in every country, 24 hours a day, in any language.",why5_h:"Live in 7–10 Days",why5_p:"From your first call to a fully operational system in under two weeks.",why6_h:"GDPR & HIPAA Ready",why6_p:"Compliance engineered into every system from day one.",proc_eyebrow:"Process",proc_h2a:"Three steps from first call",proc_h2b:"to fully automated.",proc1_h:"Contact Us",proc1_p:"We respond in under 60 seconds — and map your entire workflow from there. Free strategy call, no obligations.",proc2_h:"We Build Your System",proc2_p:"Custom automation built around your tools, your team and your business goals. You see it working before you pay.",proc3_h:"Watch It Work",proc3_p:"Your business runs smarter, faster and more profitably — from day one. Ongoing support included.",test_eyebrow:"Testimonials",test_h2a:"Operators across continents.",test_h2b:"One verdict.",t1:"We were losing leads overnight. Within two weeks of working with Merchant AI Group every enquiry was answered in under a minute — our sales pipeline doubled in 90 days.",t1n:"Real Estate Agency Owner",t2:"Bobby's team rebuilt our entire patient booking flow. We have zero missed appointments and our reception team finally focuses on patients, not phones.",t2n:"Dental Clinic Owner",t3:"The abandoned cart recovery alone paid for the whole system in the first month. Honest, fast, and clearly the best operators we have ever worked with.",t3n:"E-commerce Founder",t4:"Client intake used to take days. Now everything is automated and compliant. It feels like we added an entire ops team without hiring anyone.",t4n:"Law Firm Partner",t5:"Our guests get instant responses in their own language, 24/7. Reviews are up, complaints are down and our staff finally have their evenings back.",t5n:"Hotel General Manager",tcard_cta:"Ready to be our next success story?",fcta_eyebrow:"Final Step",fcta_h2a:"Ready to Stop Doing",fcta_h2b:"Tasks Manually?",fcta_p:"Book a free 15 minute call today. No pitch. No pressure. Just results.",footer_brand:"Global AI automation built around your business. We respond, qualify, book and follow up — so your team can focus on growth.",footer_navigate:"Navigate",footer_contact:"Contact",footer_book:"Book a Call",footer_book_p:"Free 15-minute strategy call. We map your workflow and show you exactly what automation looks like for your business.",footer_book_cta:"Book Now →",footer_tagline:"Built for operators · Delivered worldwide"},es:{nav_services:"Servicios",nav_integrations:"Integraciones",nav_why:"Por Qué Nosotros",nav_process:"Proceso",nav_testimonials:"Testimonios",nav_book:"Reservar Llamada",hero_eyebrow:"Consultoría Global de Automatización con IA",hero_h1a:"Construimos sistemas de IA",hero_h1b:"que ",hero_h1c:"gestionan tu negocio",hero_h1d:"24 horas al día.",hero_sub:"Elimina el trabajo repetitivo, ahorra miles en costes operativos y nunca pierdas otra hora en tareas que una máquina puede hacer mejor.",hero_sub2:"De la primera llamada al sistema en vivo en ",hero_days:"7–10 días.",cta_book:"Reservar Llamada Gratuita",cta_services:"Ver Nuestros Servicios",cta_whatsapp:"💬 Escríbenos por WhatsApp",trust_gdpr:"Compatible con GDPR y HIPAA",trust_global:"Entrega Global, 24/7",trust_response:"Respuesta en 60 Segundos",stat_automations:"Automatizaciones Construidas",stat_response:"Tiempo de Respuesta",stat_satisfaction:"Satisfacción del Cliente",stat_always:"Siempre Activo",stat_days:"Días para Ir en Vivo",about_eyebrow:"Sobre Nosotros — 01",about_h2a:"Más Que Automatización —",about_h2b:"Una Ventaja Competitiva Global",about_p1:"Merchant AI Group construye sistemas de IA a medida para empresas de todos los sectores y países. No vendemos software — construimos soluciones de automatización personalizadas.",about_p2:"Cada sistema está diseñado alrededor de tu flujo de trabajo específico, tus herramientas y tus objetivos. Entregamos resultados que se pagan solos.",about_roi:"ROI Promedio en 90 días",about_industries:"Sectores Atendidos",about_countries:"Países Donde Operamos",about_uptime:"Tiempo de Actividad",about_live:"De Llamada a En Vivo",svc_eyebrow:"Servicios — 25 Capacidades",svc_h2a:"Cada sistema que tu negocio",svc_h2b:"necesita para automatizar y ahorrar",svc_h2c:"tiempo y miles.",svc_lead:"Seis familias de servicios. Veinticinco capacidades. Un sistema personalizado para tu flujo de trabajo.",g1_title:"Inteligencia Artificial",g2_title:"Ventas y Generación de Leads",g3_title:"Operaciones",g4_title:"Marketing y E-commerce",g5_title:"Sectores Específicos",g6_title:"Global y Cumplimiento",s1_1:"Sistemas de Agentes IA",s1_1d:"Agentes de IA completamente autónomos que gestionan departamentos enteros sin intervención humana.",s1_2:"Agentes de Voz IA",s1_2d:"Llamadas 24/7 en cualquier idioma con conversaciones de calidad humana.",s1_3:"Chatbots y Agentes Conversacionales",s1_3d:"WhatsApp, Instagram, Facebook, Telegram y SMS — un cerebro, todos los canales.",s2_1:"Generación y Respuesta de Leads",s2_1d:"Respuesta instantánea en cada canal para que ningún lead se pierda.",s2_2:"Automatización de CRM y Pipeline",s2_2d:"Gestión completa del pipeline sin intervención humana.",s2_3:"Automatización de Email y Seguimiento",s2_3d:"Alcance en frío, nurturing y reactivación que multiplican ingresos.",s3_1:"Automatización de Citas y Reservas",s3_1d:"Reservas, recordatorios y reprogramación 24/7 sin fricción administrativa.",s3_2:"Integración de Sistemas",s3_2d:"Conecta Make, Zapier, n8n y cualquier plataforma.",s3_3:"Automatización Interna de Negocio",s3_3d:"Facturas, RRHH, informes y aprobaciones en piloto automático.",s3_4:"Automatización de Informes y Análisis",s3_4d:"Dashboards en tiempo real entregados automáticamente.",s4_1:"Automatización de Redes Sociales",s4_1d:"DMs, comentarios y programación en todas las plataformas.",s4_2:"Automatización de E-commerce",s4_2d:"Recuperación de carritos, upsells, reseñas y fidelización.",s4_3:"Automatización de Marketing y Publicidad",s4_3d:"Campañas, retargeting y lead magnets para convertir.",s5_1:"Automatización Sanitaria",s5_1d:"Reservas de pacientes, recordatorios y seguimiento simplificados.",s5_2:"Automatización Inmobiliaria",s5_2d:"Consultas, visitas y cualificación de leads al instante.",s5_3:"Automatización de Servicios Legales",s5_3d:"Incorporación, documentos y cumplimiento sin cuellos de botella.",s5_4:"Automatización de Hostelería",s5_4d:"Consultas, reservas y reseñas en cualquier idioma.",s5_5:"Automatización de Servicios Financieros",s5_5d:"Onboarding, cumplimiento e informes regulatorios.",s5_6:"Automatización de Educación",s5_6d:"Inscripción, pagos y seguimiento del progreso.",s5_7:"Automatización de Servicios del Hogar",s5_7d:"Presupuestos, programación y facturación.",s5_8:"Automatización Automotriz",s5_8d:"Pruebas, seguimiento y recordatorios de servicio.",s6_1:"Automatización Multilingüe y Global",s6_1d:"Cualquier idioma, zona horaria o país.",s6_2:"Automatización de Cumplimiento",s6_2d:"GDPR, HIPAA y automatización regulatoria global.",s6_3:"Automatización de Reputación",s6_3d:"Reseñas, testimonios y referencias automáticos.",s6_4:"Automatización de Partnerships",s6_4d:"Tracking de afiliados y gestión de socios.",int_eyebrow:"Integraciones",int_h2a:"Nos integramos con las herramientas",int_h2b:"que ya usas.",int_lead:"De CRMs a mensajería, pagos a programación — tu stack se queda. Lo hacemos comunicarse.",why_eyebrow:"Por Qué Merchant AI Group",why_h2a:"Construido para operadores serios —",why_h2b:"no compradores de software.",why1_h:"Respuesta en 60 Segundos",why1_p:"Cada lead recibe respuesta en menos de 60 segundos, automáticamente.",why2_h:"Sistemas a Medida",why2_p:"Cada automatización construida para tu negocio específico.",why3_h:"Transparencia Total",why3_p:"Precios claros. Plazos claros. Cero costes ocultos.",why4_h:"Alcance Global",why4_p:"Atendiendo negocios en todos los países, 24 horas al día.",why5_h:"En Vivo en 7–10 Días",why5_p:"De tu primera llamada a un sistema operativo en menos de dos semanas.",why6_h:"Compatible con GDPR y HIPAA",why6_p:"Cumplimiento integrado desde el primer día.",proc_eyebrow:"Proceso",proc_h2a:"Tres pasos desde la primera llamada",proc_h2b:"hasta la automatización completa.",proc1_h:"Contáctanos",proc1_p:"Respondemos en menos de 60 segundos y mapeamos tu flujo de trabajo.",proc2_h:"Construimos Tu Sistema",proc2_p:"Automatización personalizada alrededor de tus herramientas y objetivos.",proc3_h:"Observa Cómo Funciona",proc3_p:"Tu negocio funciona más inteligente y rentable desde el primer día.",test_eyebrow:"Testimonios",test_h2a:"Operadores en todos los continentes.",test_h2b:"Un veredicto.",t1:"Perdíamos leads durante la noche. En dos semanas con Merchant AI Group cada consulta se respondía en menos de un minuto — nuestra cartera se duplicó en 90 días.",t1n:"Propietario de Agencia Inmobiliaria",t2:"El equipo de Bobby reconstruyó nuestro flujo de reservas. Cero citas perdidas y nuestro equipo se centra en pacientes.",t2n:"Propietario de Clínica Dental",t3:"La recuperación de carritos pagó todo el sistema en el primer mes. Honestos, rápidos y los mejores operadores.",t3n:"Fundador de E-commerce",t4:"La incorporación de clientes tardaba días. Ahora todo está automatizado. Como añadir un equipo sin contratar.",t4n:"Socio de Bufete de Abogados",t5:"Nuestros huéspedes reciben respuestas en su idioma 24/7. Reseñas arriba, quejas abajo.",t5n:"Director General de Hotel",tcard_cta:"¿Listo para ser nuestra próxima historia de éxito?",fcta_eyebrow:"Último Paso",fcta_h2a:"¿Listo para Dejar de Hacer",fcta_h2b:"Tareas Manualmente?",fcta_p:"Reserva una llamada gratuita hoy. Sin ventas. Sin presión. Solo resultados.",footer_brand:"Automatización con IA global construida alrededor de tu negocio.",footer_navigate:"Navegar",footer_contact:"Contacto",footer_book:"Reservar Llamada",footer_book_p:"Llamada estratégica gratuita de 15 minutos.",footer_book_cta:"Reservar Ahora →",footer_tagline:"Construido para operadores · Entregado en todo el mundo"},fr:{nav_services:"Services",nav_integrations:"Intégrations",nav_why:"Pourquoi Nous",nav_process:"Processus",nav_testimonials:"Témoignages",nav_book:"Réserver un Appel",hero_eyebrow:"Consultance Mondiale en Automatisation IA",hero_h1a:"Nous construisons des systèmes IA",hero_h1b:"qui ",hero_h1c:"gèrent votre entreprise",hero_h1d:"24 heures sur 24.",hero_sub:"Éliminez le travail répétitif, économisez des milliers en coûts opérationnels.",hero_sub2:"De votre premier appel au système en ligne en ",hero_days:"7–10 jours.",cta_book:"Réserver un Appel Gratuit",cta_services:"Voir Nos Services",cta_whatsapp:"💬 Nous Écrire sur WhatsApp",trust_gdpr:"Conforme RGPD & HIPAA",trust_global:"Livraison Mondiale, 24/7",trust_response:"Réponse en 60 Secondes",stat_automations:"Automatisations Construites",stat_response:"Temps de Réponse",stat_satisfaction:"Satisfaction Client",stat_always:"Toujours Actif",stat_days:"Jours pour Aller en Ligne",about_eyebrow:"À Propos — 01",about_h2a:"Plus Que l'Automatisation —",about_h2b:"Un Avantage Concurrentiel Mondial",about_p1:"Merchant AI Group construit des systèmes IA sur mesure pour les entreprises de tous les secteurs.",about_p2:"Chaque système est conçu autour de votre flux de travail spécifique. Nous livrons des résultats qui se rentabilisent.",about_roi:"ROI Moyen en 90 jours",about_industries:"Secteurs Servis",about_countries:"Pays Desservis",about_uptime:"Disponibilité",about_live:"De l'Appel au Lancement",svc_eyebrow:"Services — 25 Capacités",svc_h2a:"Chaque système dont votre entreprise",svc_h2b:"a besoin pour automatiser",svc_h2c:"et économiser des milliers.",svc_lead:"Six familles de services. Vingt-cinq capacités. Un système sur mesure.",g1_title:"Intelligence Artificielle",g2_title:"Ventes et Génération de Leads",g3_title:"Opérations",g4_title:"Marketing et E-commerce",g5_title:"Secteurs Spécifiques",g6_title:"Global et Conformité",s1_1:"Systèmes d'Agents IA",s1_1d:"Des agents IA entièrement autonomes qui gèrent des départements entiers sans intervention humaine.",s1_2:"Agents Vocaux IA",s1_2d:"Appels 24/7 dans n'importe quelle langue avec qualité humaine.",s1_3:"Chatbots et Agents Conversationnels",s1_3d:"WhatsApp, Instagram, Facebook, Telegram et SMS — un cerveau, chaque canal.",s2_1:"Génération et Réponse aux Leads",s2_1d:"Réponse instantanée sur chaque canal.",s2_2:"Automatisation CRM et Pipeline",s2_2d:"Gestion complète du pipeline sans intervention humaine.",s2_3:"Automatisation Email et Suivi",s2_3d:"Prospection, nurturing et réengagement.",s3_1:"Automatisation des Rendez-vous",s3_1d:"Réservations, rappels et reprogrammations 24/7.",s3_2:"Intégration des Systèmes",s3_2d:"Connectez Make, Zapier, n8n et toute plateforme.",s3_3:"Automatisation Interne",s3_3d:"Factures, RH, rapports en pilote automatique.",s3_4:"Automatisation des Rapports",s3_4d:"Tableaux de bord et rapports automatiques.",s4_1:"Automatisation Réseaux Sociaux",s4_1d:"DMs, commentaires et programmation partout.",s4_2:"Automatisation E-commerce",s4_2d:"Récupération paniers, upsells et fidélité.",s4_3:"Automatisation Marketing",s4_3d:"Campagnes et retargeting pour convertir.",s5_1:"Automatisation Santé",s5_1d:"Réservations patients et suivi simplifiés.",s5_2:"Automatisation Immobilière",s5_2d:"Demandes et qualifications instantanées.",s5_3:"Automatisation Juridique",s5_3d:"Intégration client et conformité.",s5_4:"Automatisation Hôtellerie",s5_4d:"Demandes et réservations en toute langue.",s5_5:"Automatisation Finance",s5_5d:"Onboarding et conformité réglementaire.",s5_6:"Automatisation Éducation",s5_6d:"Inscription et suivi des progrès.",s5_7:"Automatisation Services",s5_7d:"Devis et facturation automatiques.",s5_8:"Automatisation Automobile",s5_8d:"Essais et rappels de service.",s6_1:"Automatisation Multilingue",s6_1d:"Toute langue, tout pays.",s6_2:"Automatisation Conformité",s6_2d:"RGPD, HIPAA et standards mondiaux.",s6_3:"Automatisation Réputation",s6_3d:"Avis Google automatiquement collectés.",s6_4:"Automatisation Partenariats",s6_4d:"Tracking affiliés et gestion partenaires.",int_eyebrow:"Intégrations",int_h2a:"Nous nous intégrons aux outils",int_h2b:"que vous utilisez déjà.",int_lead:"De CRM à messagerie, paiements à planification — votre stack reste.",why_eyebrow:"Pourquoi Merchant AI Group",why_h2a:"Construit pour les opérateurs sérieux —",why_h2b:"pas les acheteurs de logiciels.",why1_h:"Réponse en 60 Secondes",why1_p:"Chaque lead reçoit une réponse en moins de 60 secondes.",why2_h:"Systèmes Sur Mesure",why2_p:"Chaque automatisation construite spécifiquement pour votre entreprise.",why3_h:"Transparence Totale",why3_p:"Prix clairs. Délais clairs. Zéro coût caché.",why4_h:"Portée Mondiale",why4_p:"Servant les entreprises dans tous les pays 24h/24.",why5_h:"En Ligne en 7–10 Jours",why5_p:"De votre premier appel au système opérationnel en deux semaines.",why6_h:"Conforme RGPD & HIPAA",why6_p:"Conformité intégrée dès le premier jour.",proc_eyebrow:"Processus",proc_h2a:"Trois étapes du premier appel",proc_h2b:"à l'automatisation complète.",proc1_h:"Contactez-Nous",proc1_p:"Nous répondons en moins de 60 secondes.",proc2_h:"Nous Construisons Votre Système",proc2_p:"Automatisation sur mesure autour de vos outils.",proc3_h:"Regardez-le Fonctionner",proc3_p:"Votre entreprise fonctionne plus rentablement dès le premier jour.",test_eyebrow:"Témoignages",test_h2a:"Opérateurs sur tous les continents.",test_h2b:"Un verdict.",t1:"Nous perdions des leads la nuit. En deux semaines notre pipeline a doublé.",t1n:"Propriétaire d'Agence Immobilière",t2:"L'équipe de Bobby a reconstruit notre flux patients. Zéro rendez-vous manqué.",t2n:"Propriétaire de Cabinet Dentaire",t3:"La récupération de paniers a payé tout le système le premier mois.",t3n:"Fondateur E-commerce",t4:"L'intégration client prenait des jours. Maintenant tout est automatisé.",t4n:"Associé d'un Cabinet d'Avocats",t5:"Nos clients reçoivent des réponses instantanées 24/7. Les avis sont en hausse.",t5n:"Directeur Général d'Hôtel",tcard_cta:"Prêt à être notre prochaine réussite?",fcta_eyebrow:"Dernière Étape",fcta_h2a:"Prêt à Arrêter de Faire",fcta_h2b:"des Tâches Manuellement?",fcta_p:"Réservez un appel gratuit aujourd'hui. Sans vente. Juste des résultats.",footer_brand:"Automatisation IA mondiale construite autour de votre entreprise.",footer_navigate:"Navigation",footer_contact:"Contact",footer_book:"Réserver un Appel",footer_book_p:"Appel stratégique gratuit de 15 minutes.",footer_book_cta:"Réserver →",footer_tagline:"Construit pour les opérateurs · Livré partout"},de:{nav_services:"Dienste",nav_integrations:"Integrationen",nav_why:"Warum Wir",nav_process:"Prozess",nav_testimonials:"Referenzen",nav_book:"Anruf Buchen",hero_eyebrow:"Globale KI-Automatisierungsberatung",hero_h1a:"Wir bauen KI-Systeme,",hero_h1b:"die ",hero_h1c:"Ihr Unternehmen führen",hero_h1d:"24 Stunden am Tag.",hero_sub:"Eliminieren Sie Wiederholungsarbeit und sparen Sie Tausende an Betriebskosten.",hero_sub2:"Vom ersten Anruf zum Live-System in ",hero_days:"7–10 Tagen.",cta_book:"Kostenlosen Anruf Buchen",cta_services:"Unsere Dienste Sehen",cta_whatsapp:"💬 WhatsApp Nachricht",trust_gdpr:"DSGVO & HIPAA Konform",trust_global:"Weltweite Lieferung, 24/7",trust_response:"60 Sekunden Reaktion",stat_automations:"Automatisierungen",stat_response:"Lead-Reaktionszeit",stat_satisfaction:"Kundenzufriedenheit",stat_always:"Immer Aktiv",stat_days:"Tage bis Live",about_eyebrow:"Über Uns — 01",about_h2a:"Mehr als Automatisierung —",about_h2b:"Ein Globaler Wettbewerbsvorteil",about_p1:"Merchant AI Group baut maßgeschneiderte KI-Systeme für Unternehmen aller Branchen.",about_p2:"Jedes System ist auf Ihren Workflow ausgerichtet. Wir liefern Ergebnisse die sich bezahlen.",about_roi:"Durchschnittlicher ROI in 90 Tagen",about_industries:"Branchen",about_countries:"Länder",about_uptime:"Verfügbarkeit",about_live:"Vom Anruf bis Live",svc_eyebrow:"Dienste — 25 Fähigkeiten",svc_h2a:"Jedes System das Ihr Unternehmen",svc_h2b:"braucht um zu automatisieren",svc_h2c:"und Tausende zu sparen.",svc_lead:"Sechs Dienstfamilien. Fünfundzwanzig Fähigkeiten. Ein maßgeschneidertes System.",g1_title:"KI-Intelligenz",g2_title:"Vertrieb und Leads",g3_title:"Betrieb",g4_title:"Marketing und E-Commerce",g5_title:"Branchenspezifisch",g6_title:"Global und Compliance",s1_1:"KI-Agentensysteme",s1_1d:"Vollständig autonome KI-Agenten die ganze Abteilungen ohne menschliche Beteiligung führen.",s1_2:"KI-Sprachagenten",s1_2d:"24/7 Anrufe in jeder Sprache mit menschlicher Qualität.",s1_3:"KI-Chatbots",s1_3d:"WhatsApp, Instagram, Facebook, Telegram und SMS.",s2_1:"Lead-Generierung",s2_1d:"Sofortige Antwort damit kein Lead verloren geht.",s2_2:"CRM-Automatisierung",s2_2d:"Vollständige Pipeline ohne menschlichen Eingriff.",s2_3:"E-Mail-Automatisierung",s2_3d:"Kaltakquise und Nurturing-Sequenzen.",s3_1:"Terminautomatisierung",s3_1d:"24/7 Buchungen und Erinnerungen.",s3_2:"Systemintegration",s3_2d:"Make, Zapier, n8n und alle Plattformen.",s3_3:"Interne Automatisierung",s3_3d:"Rechnungen, HR und Berichte auf Autopilot.",s3_4:"Berichtsautomatisierung",s3_4d:"Echtzeit-Dashboards automatisch geliefert.",s4_1:"Social Media",s4_1d:"DMs und Kommentare auf allen Plattformen.",s4_2:"E-Commerce",s4_2d:"Warenkorbabbruch und Upsells.",s4_3:"Marketing",s4_3d:"Kampagnen und Retargeting.",s5_1:"Gesundheitswesen",s5_1d:"Patientenbuchungen vereinfacht.",s5_2:"Immobilien",s5_2d:"Anfragen und Lead-Qualifizierung.",s5_3:"Rechtsdienstleistungen",s5_3d:"Kundenaufnahme und Compliance.",s5_4:"Gastgewerbe",s5_4d:"Gästeanfragen in jeder Sprache.",s5_5:"Finanzdienstleistungen",s5_5d:"Onboarding nach regulatorischen Standards.",s5_6:"Bildung",s5_6d:"Einschreibung und Fortschrittsverfolgung.",s5_7:"Haushaltsdienstleistungen",s5_7d:"Angebote und Rechnungsstellung.",s5_8:"Automotive",s5_8d:"Probefahrten und Serviceerinnerungen.",s6_1:"Mehrsprachige Automatisierung",s6_1d:"Jede Sprache, jedes Land.",s6_2:"Compliance-Automatisierung",s6_2d:"DSGVO, HIPAA und globale Standards.",s6_3:"Reputationsautomatisierung",s6_3d:"Bewertungen automatisch gesammelt.",s6_4:"Partnership-Automatisierung",s6_4d:"Affiliate-Tracking und Partnerverwaltung.",int_eyebrow:"Integrationen",int_h2a:"Wir integrieren uns mit den Tools",int_h2b:"die Sie bereits verwenden.",int_lead:"Von CRMs bis Messaging — Ihr Stack bleibt.",why_eyebrow:"Warum Merchant AI Group",why_h2a:"Für ernsthafte Betreiber —",why_h2b:"nicht Softwarekäufer.",why1_h:"60-Sekunden-Reaktion",why1_p:"Jeder Lead erhält automatisch in 60 Sekunden Antwort.",why2_h:"Maßgeschneiderte Systeme",why2_p:"Jede Automatisierung für Ihr spezifisches Unternehmen.",why3_h:"Totale Transparenz",why3_p:"Klare Preise. Klare Zeitpläne. Null versteckte Kosten.",why4_h:"Globale Reichweite",why4_p:"Unternehmen in jedem Land 24h/24 bedienen.",why5_h:"Live in 7–10 Tagen",why5_p:"Von erstem Anruf zu operativem System in zwei Wochen.",why6_h:"DSGVO & HIPAA Konform",why6_p:"Compliance von Anfang an integriert.",proc_eyebrow:"Prozess",proc_h2a:"Drei Schritte vom ersten Anruf",proc_h2b:"zur vollständigen Automatisierung.",proc1_h:"Kontaktieren Sie Uns",proc1_p:"Wir antworten in 60 Sekunden.",proc2_h:"Wir Bauen Ihr System",proc2_p:"Maßgeschneiderte Automatisierung für Ihre Ziele.",proc3_h:"Beobachten Sie Es",proc3_p:"Ihr Unternehmen läuft profitabler ab Tag eins.",test_eyebrow:"Referenzen",test_h2a:"Betreiber auf allen Kontinenten.",test_h2b:"Ein Urteil.",t1:"Wir verloren Leads über Nacht. In zwei Wochen verdoppelte sich unsere Pipeline.",t1n:"Immobilienagentur-Inhaber",t2:"Bobbys Team baute unseren Buchungsflow neu. Null verpasste Termine.",t2n:"Zahnklinik-Inhaber",t3:"Die Warenkorbwiederherstellung zahlte das System im ersten Monat.",t3n:"E-Commerce Gründer",t4:"Kundenaufnahme dauerte Tage. Jetzt alles automatisiert.",t4n:"Anwaltskanzlei-Partner",t5:"Gäste erhalten Sofortantworten 24/7. Bewertungen gestiegen.",t5n:"Hoteldirektor",tcard_cta:"Bereit unsere nächste Erfolgsgeschichte zu sein?",fcta_eyebrow:"Letzter Schritt",fcta_h2a:"Bereit Aufgaben nicht mehr",fcta_h2b:"manuell zu erledigen?",fcta_p:"Buchen Sie einen kostenlosen Anruf. Kein Verkauf. Nur Ergebnisse.",footer_brand:"Globale KI-Automatisierung rund um Ihr Unternehmen.",footer_navigate:"Navigation",footer_contact:"Kontakt",footer_book:"Anruf Buchen",footer_book_p:"Kostenloser 15-minütiger Strategieanruf.",footer_book_cta:"Jetzt Buchen →",footer_tagline:"Für Betreiber gebaut · Weltweit geliefert"},nl:{nav_services:"Diensten",nav_integrations:"Integraties",nav_why:"Waarom Wij",nav_process:"Proces",nav_testimonials:"Getuigenissen",nav_book:"Gesprek Boeken",hero_eyebrow:"Wereldwijd AI Automatisering Consultancy",hero_h1a:"Wij bouwen AI-systemen",hero_h1b:"die ",hero_h1c:"uw bedrijf runnen",hero_h1d:"24 uur per dag.",hero_sub:"Elimineer repetitief werk en bespaar duizenden aan operationele kosten.",hero_sub2:"Van eerste gesprek tot live systeem in ",hero_days:"7–10 dagen.",cta_book:"Gratis Gesprek Boeken",cta_services:"Onze Diensten Bekijken",cta_whatsapp:"💬 WhatsApp Ons Nu",trust_gdpr:"AVG & HIPAA Compliant",trust_global:"Wereldwijde Levering, 24/7",trust_response:"60 Seconden Respons",stat_automations:"Automatiseringen",stat_response:"Lead Responstijd",stat_satisfaction:"Klanttevredenheid",stat_always:"Altijd Actief",stat_days:"Dagen tot Live",about_eyebrow:"Over Ons — 01",about_h2a:"Meer dan Automatisering —",about_h2b:"Een Mondiaal Concurrentievoordeel",about_p1:"Merchant AI Group bouwt op maat gemaakte AI-systemen voor bedrijven in alle sectoren.",about_p2:"Elk systeem is ontworpen rond uw workflow. Wij leveren resultaten die zichzelf terugbetalen.",about_roi:"Gemiddeld ROI in 90 dagen",about_industries:"Sectoren",about_countries:"Landen",about_uptime:"Uptime",about_live:"Van Gesprek tot Live",svc_eyebrow:"Diensten — 25 Mogelijkheden",svc_h2a:"Elk systeem dat uw bedrijf",svc_h2b:"nodig heeft om te automatiseren",svc_h2c:"en duizenden te besparen.",svc_lead:"Zes dienstfamilies. Vijfentwintig mogelijkheden. Één maatwerksysteem.",g1_title:"AI Intelligentie",g2_title:"Verkoop en Leads",g3_title:"Operaties",g4_title:"Marketing en E-commerce",g5_title:"Branchespecifiek",g6_title:"Mondiaal en Compliance",s1_1:"AI Agent Systemen",s1_1d:"Volledig autonome AI-agenten die hele afdelingen runnen zonder menselijke tussenkomst.",s1_2:"AI Spraakagenten",s1_2d:"24/7 gesprekken in elke taal met menselijke kwaliteit.",s1_3:"AI Chatbots",s1_3d:"WhatsApp, Instagram, Facebook, Telegram en SMS.",s2_1:"Leadgeneratie",s2_1d:"Directe respons zodat geen lead verloren gaat.",s2_2:"CRM Automatisering",s2_2d:"Volledig pijplijnbeheer zonder menselijke input.",s2_3:"E-mail Automatisering",s2_3d:"Koude outreach en nurturing-sequenties.",s3_1:"Afspraak Automatisering",s3_1d:"24/7 boekingen en herinneringen.",s3_2:"Systeemintegratie",s3_2d:"Make, Zapier, n8n en alle platforms.",s3_3:"Interne Automatisering",s3_3d:"Facturen, HR en rapporten op autopiloot.",s3_4:"Rapportage Automatisering",s3_4d:"Realtime dashboards automatisch geleverd.",s4_1:"Social Media",s4_1d:"DMs en reacties op alle platforms.",s4_2:"E-commerce",s4_2d:"Verlaten winkelwagen en upsells.",s4_3:"Marketing",s4_3d:"Campagnes en retargeting.",s5_1:"Gezondheidszorg",s5_1d:"Patiëntboekingen vereenvoudigd.",s5_2:"Vastgoed",s5_2d:"Vragen en leadkwalificatie.",s5_3:"Juridisch",s5_3d:"Klantopname en compliance.",s5_4:"Horeca",s5_4d:"Gastvragen in elke taal.",s5_5:"Financiën",s5_5d:"Onboarding en regelgeving.",s5_6:"Onderwijs",s5_6d:"Inschrijving en voortgang.",s5_7:"Thuisdiensten",s5_7d:"Offertes en facturering.",s5_8:"Automotive",s5_8d:"Proefritten en serviceherinneringen.",s6_1:"Meertalige Automatisering",s6_1d:"Elke taal, elk land.",s6_2:"Compliance Automatisering",s6_2d:"AVG, HIPAA en mondiale normen.",s6_3:"Reputatie Automatisering",s6_3d:"Google-beoordelingen automatisch verzameld.",s6_4:"Partnership Automatisering",s6_4d:"Affiliate tracking en partnerbeheer.",int_eyebrow:"Integraties",int_h2a:"Wij integreren met de tools",int_h2b:"die u al gebruikt.",int_lead:"Van CRM's tot berichten — uw stack blijft.",why_eyebrow:"Waarom Merchant AI Group",why_h2a:"Gebouwd voor serieuze operators —",why_h2b:"niet voor softwarekopers.",why1_h:"60 Seconden Respons",why1_p:"Elke lead krijgt automatisch binnen 60 seconden antwoord.",why2_h:"Maatwerk Systemen",why2_p:"Elke automatisering voor uw specifieke bedrijf.",why3_h:"Totale Transparantie",why3_p:"Duidelijke prijzen. Nul verborgen kosten.",why4_h:"Mondiaal Bereik",why4_p:"Bedrijven in elk land 24 uur per dag bedienen.",why5_h:"Live in 7–10 Dagen",why5_p:"Van eerste gesprek tot operationeel systeem in twee weken.",why6_h:"AVG & HIPAA Compliant",why6_p:"Compliance ingebouwd vanaf dag één.",proc_eyebrow:"Proces",proc_h2a:"Drie stappen van eerste gesprek",proc_h2b:"tot volledig geautomatiseerd.",proc1_h:"Neem Contact Op",proc1_p:"Wij reageren binnen 60 seconden.",proc2_h:"Wij Bouwen Uw Systeem",proc2_p:"Maatwerk automatisering voor uw doelen.",proc3_h:"Zie Het Werken",proc3_p:"Uw bedrijf werkt winstgevender vanaf dag één.",test_eyebrow:"Getuigenissen",test_h2a:"Operators op alle continenten.",test_h2b:"Één oordeel.",t1:"We verloren leads 's nachts. In twee weken verdubbelde onze pijplijn.",t1n:"Makelaarskantoor Eigenaar",t2:"Het team van Bobby herbouwde onze boekingsstroom. Nul gemiste afspraken.",t2n:"Tandartspraktijk Eigenaar",t3:"Verlaten winkelwagen herstel betaalde het systeem de eerste maand.",t3n:"E-commerce Oprichter",t4:"Klantopname duurde dagen. Nu alles geautomatiseerd.",t4n:"Advocatenkantoor Partner",t5:"Gasten krijgen directe antwoorden 24/7. Beoordelingen gestegen.",t5n:"Hotelmanager",tcard_cta:"Klaar om ons volgende succesverhaal te zijn?",fcta_eyebrow:"Laatste Stap",fcta_h2a:"Klaar om te Stoppen met",fcta_h2b:"Taken Handmatig Doen?",fcta_p:"Boek een gratis gesprek. Geen verkoop. Alleen resultaten.",footer_brand:"Mondiale AI-automatisering rond uw bedrijf.",footer_navigate:"Navigeren",footer_contact:"Contact",footer_book:"Gesprek Boeken",footer_book_p:"Gratis strategiegesprek van 15 minuten.",footer_book_cta:"Nu Boeken →",footer_tagline:"Gebouwd voor operators · Wereldwijd geleverd"}};
-
-let currentLang='en';
-const flags={en:'🇬🇧',es:'🇪🇸',fr:'🇫🇷',de:'🇩🇪',nl:'🇳🇱'};
-const langNames={en:'EN',es:'ES',fr:'FR',de:'DE',nl:'NL'};
-
-function setLang(lang){
-  currentLang=lang;
-  document.getElementById('currentFlag').textContent=flags[lang];
-  document.getElementById('currentLang').textContent=langNames[lang];
-  document.querySelectorAll('.lang-option').forEach((el,i)=>el.classList.toggle('active',['en','es','fr','de','nl'][i]===lang));
-  const t=T[lang];
-  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(t[k])el.textContent=t[k];});
-  document.getElementById('langSwitcher').classList.remove('open');
-  document.documentElement.lang=lang;
-}
-
 function toggleLang(){document.getElementById('langSwitcher').classList.toggle('open');}
-
 function toggleMobileNav(){
   document.querySelector('nav').classList.toggle('open');
   document.getElementById('hamburgerBtn').classList.toggle('open');
@@ -427,25 +240,9 @@ document.querySelectorAll('nav > a').forEach(function(a){
     document.getElementById('navOverlay').classList.remove('open');
   });
 });
-
 document.addEventListener('click',function(e){if(!e.target.closest('#langSwitcher'))document.getElementById('langSwitcher').classList.remove('open');});
-
 const hdr=document.getElementById('hdr');
 window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40));
-
-function toggleGroup(el){
-  const group=el.closest('.svc-group');
-  const isOpen=group.classList.contains('open');
-  document.querySelectorAll('.svc-group').forEach(g=>g.classList.remove('open'));
-  if(!isOpen)group.classList.add('open');
-}
-
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*70);obs.unobserve(e.target);}});
-},{threshold:0.08});
-document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
-document.querySelectorAll('.hero .fi').forEach((el,i)=>setTimeout(()=>el.classList.add('vis'),180+i*140));
-
 </script>
 
 <script src="/chat-widget.js"
