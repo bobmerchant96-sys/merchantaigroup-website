@@ -10,7 +10,7 @@ backend:
   gateway_url: https://gateway.decapbridge.com
 
 media_folder: "insights/images"
-public_folder: "/insights/images"
+public_folder: "/insights/images" 
 
 collections:
   - name: "insights"
