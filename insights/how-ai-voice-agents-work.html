@@ -1,11 +1,12 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How AI Voice Agents Work — Merchant AI Group</title>
-<meta name="description" content="A clear, step-by-step breakdown of how AI voice agents actually work — from answering a call to holding a real conversation to logging the outcome.">
+<meta name="description" content="A clear, step-by-step breakdown of how AI voice agents actually work — plus the AI jargon (trigger, intent, webhook) explained in plain English.">
 <link rel="canonical" href="https://merchantaigroup.com/insights/how-ai-voice-agents-work.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -177,6 +178,20 @@ footer{border-top:1px solid var(--blue-border);background:var(--navy);padding:64
 
     <h2>Why This Matters in Practice</h2>
     <p>The real value isn't the novelty of "talking to a robot" — it's that none of the above requires a human to be available. Every call gets this same level of attention, at 3am on a Sunday exactly as reliably as 10am on a Tuesday. That consistency is the actual point.</p>
+
+    <h2>The AI Terms You'll Hear (And What They Actually Mean)</h2>
+    <p>If you start looking into voice agents, the same handful of technical words come up again and again. None of them are complicated once someone actually explains them — here's what each one means, mapped back to the steps above.</p>
+    <ul>
+      <li><strong>Trigger</strong> — the "start signal" that kicks the AI into action. A phone ringing is a trigger. A form being submitted is a trigger. No trigger, no response — it's the "if this happens" half of how automation works.</li>
+      <li><strong>Intent</strong> — what the caller actually wants, once you strip away the exact words they used. "I need someone to look at my boiler" and "my heating's broken, can someone come out" are different sentences with the same intent. This is step 3 above — recognizing intent is what lets the AI respond usefully instead of just matching keywords.</li>
+      <li><strong>STT — Speech-to-Text</strong> — the technology that turns spoken words into text the system can read, live, as someone is talking. This is step 2.</li>
+      <li><strong>TTS — Text-to-Speech</strong> — the reverse: turning the AI's written reply into natural-sounding spoken audio. This is step 4.</li>
+      <li><strong>Webhook (or API call)</strong> — the mechanism that lets the AI actually do something outside the conversation, like book a calendar slot or create a CRM record. Without this, the AI could only talk — the webhook is what lets it act. This is step 6.</li>
+      <li><strong>Context (or session memory)</strong> — the AI's ability to remember what was said two sentences ago in the same call, so it doesn't ask for your name three times. This is what makes step 5 possible.</li>
+      <li><strong>Escalation (or fallback)</strong> — the built-in rule that hands a call to a human the moment the AI hits something it isn't confident handling. A well-built agent escalates before it fails, not after.</li>
+      <li><strong>Latency</strong> — the delay between a caller finishing a sentence and the AI starting its reply. Push this past about a second and conversations start to feel unnatural — it's one of the hardest parts to get right.</li>
+    </ul>
+    <p>You don't need to memorize any of this to benefit from a voice agent. But knowing these terms means you can ask sharper questions when you're evaluating who builds it for you.</p>
 
     <h2>What Makes a Good Voice Agent</h2>
     <p>The difference between a frustrating experience and a genuinely useful one comes down to a few things: how naturally it handles being interrupted or going off-script, how well it recognizes when a call needs to be escalated to a real person, and whether it actually understands context across the conversation rather than treating each sentence in isolation. This is exactly where the real engineering effort goes.</p>
